@@ -44,11 +44,11 @@ class JHtmlTemplates
 					JHtml::tooltipText('COM_TEMPLATES_CLICK_TO_ENLARGE') . '">' . $html . '</a>';
 				$html .= JHtmlBootstrap::renderModal(
 					$template . '-Modal', array(
-						'url' => $preview,
 						'title' => JText::_('COM_TEMPLATES_BUTTON_PREVIEW'),
-						'height' => '800px',
+						'height' => '500px',
 						'width' => '800px'
-						)
+						),
+					$body = '<div><img src="' . $preview . '" style="max-width=100%"></div>'
 					);
 			}
 		}
