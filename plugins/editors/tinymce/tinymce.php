@@ -616,9 +616,6 @@ class PlgEditorTinymce extends JPlugin
 		$mobileVersion = $this->params->get('mobile', 0);
 
 		JFactory::getDocument()->addScript('/media/editors/tinymce/tinymce.min.js');
-//		$load = "\t<script type=\"text/javascript\" src=\"" .
-//			JUri::root() . $this->_basePath .
-//			"/tinymce.min.js\"></script>\n";
 
 		/**
 		 * Shrink the buttons if not on a mobile or if mobile view is off.
@@ -712,7 +709,7 @@ class PlgEditorTinymce extends JPlugin
 						' . $resizing . '
 						height : "' . $html_height . '",
 						width : "' . $html_width . '"
-	
+
 					});
 				');
 				break;
