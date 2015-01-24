@@ -19,6 +19,11 @@ if ($button->get('name'))
 	$onclick  = ($button->get('onclick')) ? ' onclick="' . $button->get('onclick') . '"' : ' onclick="IeCursorFix(); return false;"';
 	$title    = ($button->get('title')) ? $button->get('title') : $button->get('text');
 
+	if ($button->get('js'))
+	{
+		JFactory::getApplication()->getDocument()->addScriptDeclaration($button->get('js'));
+	}
+
 	if ($button->get('modal'))
 	{
 		// Load modal popup behavior
