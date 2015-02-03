@@ -826,29 +826,7 @@ class PlgEditorTinymce extends JPlugin
 	 */
 	public function onGetInsertMethod($name)
 	{
-		JFactory::getDocument()->addScriptDeclaration("
-			function isBrowserIE()
-			{
-				return navigator.appName==\"Microsoft Internet Explorer\";
-			}
-
-			function jInsertEditorText( text, editor )
-			{
-				tinyMCE.execCommand('mceInsertContent', false, text);
-			}
-
-			var global_ie_bookmark = false;
-
-			function IeCursorFix()
-			{
-				if (isBrowserIE())
-				{
-					tinyMCE.execCommand('mceInsertContent', false, '');
-					global_ie_bookmark = tinyMCE.activeEditor.selection.getBookmark(false);
-				}
-				return true;
-			}
-		");
+		JHtml::script('media/editors/tinymce/on-get-insert-method.min.js', false, false, false, false, true);
 
 		return true;
 	}
