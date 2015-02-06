@@ -11,13 +11,13 @@ defined('_JEXEC') or die;
 
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
 
-JHtml::_('behavior.formvalidation');
+JHtml::_('behavior.formvalidator');
 JHtml::_('behavior.combobox');
 $hasContent = empty($this->item->module) || $this->item->module == 'custom' || $this->item->module == 'mod_custom';
 
 $script = "Joomla.submitbutton = function(task)
 	{
-			if (task == 'module.cancel' || document.formvalidator.isValid(document.id('module-form'))) {";
+			if (task == 'module.cancel' || document.formvalidator.isValid(document.getElementById('module-form'))) {";
 if ($hasContent)
 {
 	$script .= $this->form->getField('content')->save();
